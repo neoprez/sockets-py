@@ -9,6 +9,17 @@ try:
 except Exception as err:
 	code, msg = inst.args
 	print('Failed to create socket. Error code: ' + str(code) + ', Error message : ' + msg)
-	sys.exit();
+	sys.exit()
 
 print('Socket Created')
+
+host = 'www.google.com'
+
+try:
+	remote_ip = socket.gethostbyname(host)
+except Exception as err:
+	#could not resolve
+	print('Hostname could not be resolved. Exiting')
+	sys.exit()
+
+print('Ip address of ' + host + ' is ' + remote_ip)
