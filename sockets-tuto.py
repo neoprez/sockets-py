@@ -45,3 +45,6 @@ print('Message send successfully')
 reply = s.recv(4096)
 
 print(reply)
+
+#close socket
+s.close()
