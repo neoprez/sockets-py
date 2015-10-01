@@ -41,3 +41,7 @@ except Exception as err:
 	sys.exit()
 
 print('Message send successfully')
+
+reply = s.recv(4096)
+
+print(reply)
