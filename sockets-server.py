@@ -15,3 +15,6 @@ except Exception as err:
 	sys.exit()
 
 print('Socket bind complete')
+
+s.listen(10)
+print("Socket now listening")
