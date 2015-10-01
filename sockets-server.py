@@ -25,3 +25,10 @@ conn, addr = s.accept()
 
 #display client information
 print('Connected with ' + addr[0] + ':' + str(addr[1]))
+
+#now kee talking with the client
+data = conn.recv(1024)
+conn.sendall(data)
+
+conn.close()
+s.close()
