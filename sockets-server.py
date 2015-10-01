@@ -19,16 +19,19 @@ print('Socket bind complete')
 s.listen(10)
 print("Socket now listening")
 
+# now keep talking with the client
+while 1:
+	#wait to accept a connection - blocking call
+	conn, addr = s.accept()
+	print('Connected with ' + addr[0] + ':' + str(addr[1]))
 
-#wait to accept a connection - blocking call
-conn, addr = s.accept()
+	#now keep talking with the client
+	data = conn.recv(1024)
+	reply = b'Ok..'+ data
+	if not data:
+		break
 
-#display client information
-print('Connected with ' + addr[0] + ':' + str(addr[1]))
-
-#now kee talking with the client
-data = conn.recv(1024)
-conn.sendall(data)
+	conn.sendall(reply)
 
 conn.close()
 s.close()
