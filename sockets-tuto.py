@@ -14,6 +14,7 @@ except Exception as err:
 print('Socket Created')
 
 host = 'www.google.com'
+port = 80
 
 try:
 	remote_ip = socket.gethostbyname(host)
@@ -23,3 +24,8 @@ except Exception as err:
 	sys.exit()
 
 print('Ip address of ' + host + ' is ' + remote_ip)
+
+#Connect to remote server
+s.connect((remote_ip, port))
+
+print('Socket Connected to ' + host + ' on ip ' + remote_ip)
