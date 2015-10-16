@@ -28,8 +28,6 @@ while True:
 		connectionSocket, addr = serverSocket.accept() #Fill in start #Fill in end
 		try:
 				message = connectionSocket.recv(1024).decode(encoding='utf-8')#Fill in start #Fill in end
-				if not message:
-						break
 
 				print('Connection received from ' + str(addr))
 				filename = message.split(' ')[1]
