@@ -56,4 +56,5 @@ while True:
  				#Fill in start
 				connectionSocket.close()
  		 		#Fill in end 
+f.close()
 serverSocket.close() 
